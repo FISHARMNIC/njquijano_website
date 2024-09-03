@@ -1,0 +1,49 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    overflow: hidden;
+    cursor: url('../assets/cursor.png'), auto;
+}
+
+.con {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+}
+
+
+.overlap {
+    grid-column: 1;grid-row: 1;
+}
+
+@keyframes fade-out {
+    from {
+       opacity: 1;
+    }
+    to {
+       opacity: 0;
+    }
+}
+pre {
+    pointer-events: auto;
+    font-family: DOS;
+    max-width: 480px;
+    height:314px;
+    overflow:scroll;
+}
+
+
+.noclick {
+    user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none;
+}
