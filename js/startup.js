@@ -7,7 +7,7 @@ const canvasCenterY = window.innerHeight / 2
 var startup = {
     interval: null,
     strings: ["n i c o l a s  q u i j a n o"], //["n i c o l a s  q u i j a n o", "..."],
-    times: [50, 200],               // controlling display times of above strings
+    times: [10],//[50, 200],               // controlling display times of above strings
     textReference: document.getElementById("startup_text"),
     beginScroll: function (cb) {
         startup.interval = setInterval(startup.addChar, startup.times[0], cb)
@@ -54,20 +54,20 @@ var startup = {
             ctx.fillStyle = COLOR_BG
 
             //ENABLE IN TESTINGs
-            // ctx.fillRect(0, 0, window.innerWidth, window.innerHeight)
-            // postBoot()
+            ctx.fillRect(0, 0, window.innerWidth, window.innerHeight)
+            postBoot()
 
             //DISABLE IN TESTING
-            var i = 0;
-            var interval = setInterval(() => {
-                ctx.fillRect(canvasCenterX - (i/2), canvasCenterY - ((i / scale)/2), i, i / scale)
-                i += 10
-                if(i > window.innerWidth - 5)
-                {
-                    clearInterval(interval)
-                    postBoot()
-                }
-            }, 10) 
+            // var i = 0;
+            // var interval = setInterval(() => {
+            //     ctx.fillRect(canvasCenterX - (i/2), canvasCenterY - ((i / scale)/2), i, i / scale)
+            //     i += 10
+            //     if(i > window.innerWidth - 5)
+            //     {
+            //         clearInterval(interval)
+            //         postBoot()
+            //     }
+            // }, 10) 
 
 
         }, 1000) // SET TO 1000 AFTER TESTING

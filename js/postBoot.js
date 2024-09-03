@@ -14,8 +14,34 @@ var texts = {
     * Logic circuits and CPU design
 * Avid climber and skier!
 
-Check out some of the other apps. I built
-this website from scratch in Javascript.
+Check out some of the other apps. I built this 
+website from scratch in Javascript.
+
+                                             
+                                             
+                                             
+                   -=---  -                  
+               -**#%#%%##**+===              
+            -=+#%#%%%%%%#%#%%*+              
+          -*%%%%%%%%%%%%%%%%%#*=             
+          *#%%%%%%%%%%%%%%%%%##*+            
+         =#%%%%%%%%%%%%%%%%%%###+=           
+        -=#%%@@@%%@@%%%%%%%%%%%##-=          
+         *%%%%%%%%%%%%####%%%%%%*+-          
+         @%%@@%#***####**#####*##==          
+        **%%%@******##***####*+*=            
+        %@@%%@*++******+++***+=#             
+         %@@@*%+++******+++**+=+             
+            %#@+++*#***********              
+             *+++++**%++**%**++              
+            =@#+++++******+++*               
+          *+++#+++**+++++++=                 
+      +-=#*+#++*+*******##-*                 
+  --==+*#+%#*=+##*****##*++@#-==             
+=+#=**#+*#++###++#********#%%#=+*++++-       
++=+*#*++=%*++#+==+#********#%###=%*=*++-     
+*++**#*+**#==###+-+*****++***%#%%*%##+#*-    
++++=*+*++*#*++%*#++++++++++*%#%=+**#**#+*-   
 </pre>`,
     links:
 `<pre>Here are the some of my pages
@@ -47,6 +73,5 @@ function postBoot() {
     newApp("CONTACT", "icon_mail", texts.contact, 10, 20, handleEvents)
 
 
-    renderWindows()
-    renderIcons()
+    renderAll()
 }

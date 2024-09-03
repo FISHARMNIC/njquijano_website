@@ -80,11 +80,18 @@ function renderIcons() {
     })
 }
 
+function renderTime()
+{
+    var date = new Date()
+    putText(date.toLocaleTimeString(), window.innerWidth - 70, window.innerHeight - 10)
+}
+
 function renderAll() {
     ctx.fillStyle = COLOR_BG
     ctx.fillRect(0, 0, window.innerWidth, window.innerHeight)
     renderIcons()
     renderWindows()
+    renderTime()
 }
 
 function setText(window, offX, offY, text) {
