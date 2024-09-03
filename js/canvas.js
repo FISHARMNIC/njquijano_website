@@ -83,7 +83,7 @@ function renderIcons() {
 function renderTime()
 {
     var date = new Date()
-    putText(date.toLocaleTimeString(), window.innerWidth - 70, window.innerHeight - 10)
+    document.getElementById("time").innerHTML = date.toLocaleTimeString()
 }
 
 function renderAll() {
@@ -91,7 +91,6 @@ function renderAll() {
     ctx.fillRect(0, 0, window.innerWidth, window.innerHeight)
     renderIcons()
     renderWindows()
-    renderTime()
 }
 
 function setText(window, offX, offY, text) {

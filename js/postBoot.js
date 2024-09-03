@@ -72,6 +72,6 @@ function postBoot() {
     newApp("PROJECTS", "icon_droor", texts.projects, 10, 20, handleEvents)
     newApp("CONTACT", "icon_mail", texts.contact, 10, 20, handleEvents)
 
-
+    setInterval(renderTime, 1000)
     renderAll()
 }
