@@ -51,10 +51,18 @@ website from scratch in Javascript.
 
 </pre>`,
     projects:
-`<pre>Here are some things that I have made
-
-TODO :)
-</pre>,`,
+`<pre>Here are some things that I have made / am making
+* <a href="https://github.com/FISHARMNIC/HAMprimeC2">32-bit Compiled Programming Language</a>
+    * Like a mix of C, Java, and, Python/JS
+    * Automatic garbage collection system
+    * Lightning fast
+* <a href="https://github.com/FISHARMNIC/CPU">Work in Progress CPU</a>
+    * Interrupts
+    * 16-bit register pairs for math operations
+    * IO ports
+    * Mulitple memory references per instruction
+    * Segmented memory
+</pre>`,
     contact:
 `<pre>
 * Email: nicolas.quijano773@gmail.com

@@ -62,7 +62,7 @@ function handleEvents(window, event) {
 }
 
 function scanWindows(e) {
-    console.log(e.target.tagName)
+    //console.log(e.target.tagName)
     var noHit = true
     for(var i = activeWindows.length - 1; i >= 0; i--)
     {
@@ -74,14 +74,6 @@ function scanWindows(e) {
             break
         }
     }
-    // var noHit = activeWindows.every(window => {
-    //     if (e.clientX > window.x && e.clientY > window.y && e.clientX < (window.x + window.w) && e.clientY < (window.y + window.h)) {
-    //         window.owner(window, e)
-    //         renderAll()
-    //         return false
-    //     }
-    //     return true
-    // })
 
     if (e.type == "mouseup") {
         windowBeingDragged.ptr = null
@@ -109,8 +101,8 @@ function scanWindowsAndIcons(e) {
     if (noHit)
         allIcons.every(icon => {
             if (e.clientX > icon.x && e.clientY > icon.y && e.clientX < (icon.x + icon.size) && e.clientY < (icon.y + icon.size)) {
-                console.log("launch")
-                newWindow(icon.title, randMax(200), randMax(200), 480, 360, icon.text, icon.owner, icon.ox, icon.oy)
+                //console.log("launch")
+                newWindow(icon.title, randMax(200), randMax(200), 600, 400, icon.text, icon.owner, icon.ox, icon.oy)
                 renderAll()
                 return false
             }

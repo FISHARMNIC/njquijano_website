@@ -4,6 +4,9 @@ const COLOR_BG = "#F9E8BA"
 const COLOR_BORDER = "#341E1C"
 const IMG_SIZE = 60
 
+const FONT_SIZE_DEF = 20
+var currentFontSize = FONT_SIZE_DEF
+
 function renderImage(image, x, y, w, h) {
     var img = new Image();
     img.onload = function () {
@@ -44,9 +47,10 @@ function renderWindow(window) {
     ctx.stroke(); // Render the path
 
     var text = document.getElementById(`_APP_${window.id}_`)
-    
+
     text.style.left = window.x + window.ox + "px"
-    text.style.top = window.y + window.oy + "px"
+    text.style.top = window.y + window.oy - (currentFontSize-15) + "px"
+    text.style.fontSize = (currentFontSize) + "px"
 
     if (activeWindows[activeWindows.length - 1] == window) {
         text.hidden = false
@@ -80,8 +84,7 @@ function renderIcons() {
     })
 }
 
-function renderTime()
-{
+function renderTime() {
     var date = new Date()
     document.getElementById("time").innerHTML = date.toLocaleTimeString()
 }
@@ -98,4 +101,13 @@ function setText(window, offX, offY, text) {
     area.innerHTML = text
     area.style.left = window.x + offX + "px"
     area.style.top = window.y + offY + "px"
+}
+
+function cfont(s) {
+
+    if((s < 0 && currentFontSize > 14) || (s > 0 && currentFontSize < 25))
+    {
+        currentFontSize += parseInt(s)
+        renderAll()
+    }
 }
