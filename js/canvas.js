@@ -2,7 +2,7 @@
 
 const COLOR_BG = "#F9E8BA"
 const COLOR_BORDER = "#341E1C"
-const IMG_SIZE = 60
+const IMG_SIZE = 65
 
 const FONT_SIZE_DEF = 20
 var currentFontSize = FONT_SIZE_DEF
@@ -70,8 +70,6 @@ function renderIcons() {
     const START_X = 30;
     const START_Y = 30;
 
-    const IMG_SIZE = 60
-
     allIcons.forEach(icon => {
         if (icon.img.complete) {
             ctx.drawImage(icon.img, icon.x, icon.y, IMG_SIZE, IMG_SIZE);
@@ -80,7 +78,7 @@ function renderIcons() {
                 ctx.drawImage(icon.img, icon.x, icon.y, IMG_SIZE, IMG_SIZE);
             };
         }
-        putText(icon.title, icon.x + (IMG_SIZE / 2), icon.y + 80);
+        putText(icon.title, icon.x + (IMG_SIZE / 2), icon.y + 85);
     })
 }
 

@@ -24,7 +24,7 @@ function newApp(title,image, text, ox, oy, owner)
     const START_X = 30;
     const START_Y = 30;
 
-    newIcon(title, image, START_X, START_Y + allIcons.length * 100, owner, IMG_SIZE, text, ox, oy)
+    newIcon(title, image, START_X, START_Y + allIcons.length * 110, owner, IMG_SIZE, text, ox, oy)
 
 
 }

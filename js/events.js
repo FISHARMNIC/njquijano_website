@@ -102,7 +102,7 @@ function scanWindowsAndIcons(e) {
         allIcons.every(icon => {
             if (e.clientX > icon.x && e.clientY > icon.y && e.clientX < (icon.x + icon.size) && e.clientY < (icon.y + icon.size)) {
                 //console.log("launch")
-                newWindow(icon.title, randMax(200), randMax(200), 600, 400, icon.text, icon.owner, icon.ox, icon.oy)
+                newWindow(icon.title, randMax(window.innerWidth / 2.5) + 120, randMax(window.innerHeight/4) + 20, 600, 400, icon.text, icon.owner, icon.ox, icon.oy)
                 renderAll()
                 return false
             }
