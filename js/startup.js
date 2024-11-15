@@ -7,7 +7,7 @@ const canvasCenterY = window.innerHeight / 2
 var startup = {
     interval: null,
     strings: ["n i c o l a s  q u i j a n o"], //["n i c o l a s  q u i j a n o", "..."],
-    times: [10],//[50, 200],               // controlling display times of above strings
+    times: [30],//[50, 200],               // controlling display times of above strings
     textReference: document.getElementById("startup_text"),
     beginScroll: function (cb) {
         startup.interval = setInterval(startup.addChar, startup.times[0], cb)

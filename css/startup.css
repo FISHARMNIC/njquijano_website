@@ -53,6 +53,34 @@ button {
     background-color: #F9E8BA;
 }
 
+input {
+    font-family: DOS;
+    background-color: #F9E8BA;
+    font-size: 18px;
+    border: none;
+    border-bottom: 1.5px solid #341E1C;
+    transform:translateY(-2px);
+}
+
+textarea {
+    background-color: #e2d3aa;
+    border: none;
+    font-family: DOS;
+}
+
+select {
+    background: none;
+    border-radius: 4px;
+}
+
+.intbttn {
+    width: auto !important;
+    height: auto !important;
+
+    font-size: 20px !important;
+    padding: 5px !important;
+}
+
 .noclick {
     user-select: none;
         -moz-user-select: none;
