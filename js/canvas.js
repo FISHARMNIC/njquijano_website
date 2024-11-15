@@ -1,5 +1,11 @@
 // TODO: on drag make that window last in arr so it draws it last on top
 
+/*
+How to fix issue, take "ss" of portion and paste it
+
+
+*/
+
 const COLOR_BG = "#F9E8BA"
 const COLOR_BORDER = "#341E1C"
 const IMG_SIZE = 65
@@ -56,6 +62,11 @@ function renderWindow(window) {
         text.hidden = false
     } else {
         text.hidden = true
+        //console.log(window)
+
+        //if(window.oldImgData != undefined)
+            //ctx.putImageData(window.oldImgData, 50, 70);
+        
         putText("FOCUS TO VIEW TEXT", window.x + 90, window.y + 50)
     }
 }
@@ -70,7 +81,7 @@ function renderIcons() {
     const START_X = 30;
     const START_Y = 30;
 
-    allIcons.forEach(icon => {
+    allIcons.forEach((icon,i) => {
         if (icon.img.complete) {
             ctx.drawImage(icon.img, icon.x, icon.y, IMG_SIZE, IMG_SIZE);
         } else {

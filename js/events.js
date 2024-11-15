@@ -12,6 +12,7 @@ var downPos = {
 }
 
 var windowIdCounter = 0
+var lastClick = null
 
 function findWindowByRef(window) {
     for (var i = 0; i < activeWindows.length; i++) {
@@ -39,6 +40,14 @@ function handleEvents(window, event) {
     }
 
     else if (event.type == "mousedown") {
+        //console.log("OLD", lastClick)
+        // if(lastClick != null)
+        // {
+        //     lastClick.oldImgData = ctx.getImageData(lastClick.x,lastClick.y, lastClick.w, lastClick.h)
+        // }
+
+        //lastClick = window
+
         var selected = activeWindows.splice(findWindowByRef(window), 1)
         activeWindows.push(selected[0])
 

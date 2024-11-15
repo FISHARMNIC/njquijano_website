@@ -49,6 +49,9 @@ website from scratch in Javascript.
 * <a href="https://github.com/FISHARMNIC">Github</a>
 * <a href="https://www.linkedin.com/in/nicolás-quijano-124657272/">Linkedin</a>
 
+Credit:
+* MacOS icons: <a href="https://www.figma.com/community/file/1258417138275801052">Agustin Cairone</a>
+
 </pre>`,
     projects:
 `<pre>Here are some things that I have made / am making
@@ -83,6 +86,8 @@ App icon: <select id="ma_icon">
     <option value="icon_news">news</option>
     <option value="icon_save">save</option>
     <option value="icon_vector">vector</option>
+    <option value="icon_dog">dog</option>
+    <option value="icon_heli">helicopter</option>
 </select>
 
 HTML content: 
@@ -91,6 +96,9 @@ Stuff here
 </pre></textarea>
 
 <button class="intbttn" onclick="customApp()"> Create </button>
+</pre>`,
+    dino: `<pre style="overflow: hidden">
+<iframe src="https://chromedino.com/" frameborder="0" scrolling="no" width="580px" height="400px" loading="lazy"></iframe>
 </pre>`
 }
 
@@ -114,6 +122,8 @@ function postBoot() {
     newApp("PROJECTS", "icon_droor", texts.projects, 10, 20, handleEvents)
     newApp("CONTACT", "icon_mail", texts.contact, 10, 20, handleEvents)
     newApp("CUSTOM APP!", "icon_vector", texts.makeApp, 10, 20, handleEvents)
+    newApp("DINO", "icon_dog", texts.dino, 10, 20, handleEvents)
+    
 
     setInterval(renderTime, 1000)
     renderAll()
