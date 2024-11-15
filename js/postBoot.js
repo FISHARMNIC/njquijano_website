@@ -99,7 +99,8 @@ Stuff here
 </pre>`,
     dino: `<pre style="overflow: hidden">
 <iframe src="https://chromedino.com/" frameborder="0" scrolling="no" width="580px" height="400px" loading="lazy"></iframe>
-</pre>`
+</pre>`,
+    browser:`<pre style="overflow: hidden"><iframe width="580px" height="400px" src="https://www.google.com/search?igu=1"></iframe></pre>`
 }
 
 function customApp()
@@ -108,7 +109,7 @@ function customApp()
     var ma_icon = document.getElementById("ma_icon").value
     var ma_inner = document.getElementById("ma_inner").value
 
-    newApp(ma_name, ma_icon, ma_inner, 10, 20, handleEvents)
+    newApp(ma_name, ma_icon, ma_inner, 10, 20, handleEvents, true)
     renderIcons()
 }
 
@@ -118,11 +119,13 @@ function postBoot() {
     // this all needs to be in a render function that clears when requested
 
     newApp("ABOUT", "icon_save", texts.about, 10, 20, handleEvents)
-    newApp("LINKS", "icon_links", texts.links, 10, 20, handleEvents)
+    newApp("LINKS", "icon_bull", texts.links, 10, 20, handleEvents)
     newApp("PROJECTS", "icon_droor", texts.projects, 10, 20, handleEvents)
     newApp("CONTACT", "icon_mail", texts.contact, 10, 20, handleEvents)
-    newApp("CUSTOM APP!", "icon_vector", texts.makeApp, 10, 20, handleEvents)
-    newApp("DINO", "icon_dog", texts.dino, 10, 20, handleEvents)
+    newApp("CUSTOM APP!", "icon_vector", texts.makeApp, 10, 20, handleEvents, true)
+    newApp("CHROME DINO", "icon_dog", texts.dino, 10, 20, handleEvents, true)
+    newApp("BROWSER", "icon_links", texts.browser, 10, 20, handleEvents, true)
+
     
 
     setInterval(renderTime, 1000)

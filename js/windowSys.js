@@ -19,12 +19,20 @@ function newIcon(title, image, x, y, owner, size, text, ox, oy)
     allIcons.push({img, title, x, y, size, owner, text, ox, oy})
 }
 
-function newApp(title,image, text, ox, oy, owner)
+var userIconsCount = 0;
+
+function newApp(title,image, text, ox, oy, owner, user = false)
 {
     const START_X = 30;
     const START_Y = 30;
 
-    newIcon(title, image, START_X + (110 * Math.floor(allIcons.length/6)), START_Y + (allIcons.length % 6) * 110, owner, IMG_SIZE, text, ox, oy)
-
-
+    if(user)
+    {
+        newIcon(title, image, START_X + (110 * Math.floor(userIconsCount/6 + 2)), START_Y + (userIconsCount % 6) * 110, owner, IMG_SIZE, text, ox, oy)
+        userIconsCount++
+    }
+    else
+    {
+        newIcon(title, image, START_X + (110 * Math.floor(allIcons.length/6)), START_Y + (allIcons.length % 6) * 110, owner, IMG_SIZE, text, ox, oy)
+    }
 }
