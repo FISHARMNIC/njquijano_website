@@ -55,7 +55,7 @@ var startup = {
 
             //ENABLE IN TESTINGs
             ctx.fillRect(0, 0, window.innerWidth, window.innerHeight)
-            postBoot()
+            kernel()
 
             //DISABLE IN TESTING
             // var i = 0;
@@ -65,7 +65,7 @@ var startup = {
             //     if(i > window.innerWidth - 5)
             //     {
             //         clearInterval(interval)
-            //         postBoot()
+            //         kernel()
             //     }
             // }, 10) 
 
