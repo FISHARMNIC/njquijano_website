@@ -227,7 +227,6 @@ function kernel() {
     setInterval(renderTime, 1000)
 
     if (!useRandomSpawn) {
-        alert("hi")
         setTimeout(() => {
             newWindow("MOBILE NOTICE", 0, 0, ICON_WIDTH, ICON_HEIGHT, `<pre style="white-space: pre-wrap;width:80%;padding-left:5%;">
 \n\nPlease note that this website was not designed for mobile 
@@ -237,7 +236,7 @@ Some apps might not show up correctly depending on your system
 Click X Above to close this message
                 </pre>`, handleEvents, 0, 0)
             renderAll()
-        }, 300);
+        }, 500);
     }
 
     renderAll()
