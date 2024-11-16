@@ -55,18 +55,25 @@ function renderWindow(window) {
     var text = document.getElementById(`_APP_${window.id}_`)
 
     text.style.left = window.x + window.ox + "px"
-    text.style.top = window.y + window.oy - (currentFontSize-15) + "px"
+    text.style.top = window.y + window.oy - (currentFontSize - 15) + "px"
     text.style.fontSize = (currentFontSize) + "px"
 
     if (activeWindows[activeWindows.length - 1] == window) {
         text.hidden = false
+
+        if (!useRandomSpawn) {
+            pre = text.children[0]
+            pre.style.width = (ICON_WIDTH - 25) + "px"
+            pre.style.height =  ICON_HEIGHT + "px"
+        }
+        
     } else {
         text.hidden = true
         //console.log(window)
 
         //if(window.oldImgData != undefined)
-            //ctx.putImageData(window.oldImgData, 50, 70);
-        
+        //ctx.putImageData(window.oldImgData, 50, 70);
+
         putText("FOCUS TO VIEW TEXT", window.x + 90, window.y + 50)
     }
 }
@@ -81,7 +88,7 @@ function renderIcons() {
     const START_X = 30;
     const START_Y = 30;
 
-    allIcons.forEach((icon,i) => {
+    allIcons.forEach((icon, i) => {
         if (icon.img.complete) {
             ctx.drawImage(icon.img, icon.x, icon.y, IMG_SIZE, IMG_SIZE);
         } else {
@@ -114,8 +121,7 @@ function setText(window, offX, offY, text) {
 
 function cfont(s) {
 
-    if((s < 0 && currentFontSize > 14) || (s > 0 && currentFontSize < 25))
-    {
+    if ((s < 0 && currentFontSize > 14) || (s > 0 && currentFontSize < 25)) {
         currentFontSize += parseInt(s)
         renderAll()
     }
