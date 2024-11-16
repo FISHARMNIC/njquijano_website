@@ -24,10 +24,12 @@ function findWindowByRef(window) {
 }
 
 function handleEvents(window, event) {
+    console.log(event.type)
     var locX = event.clientX - window.x
     var locY = event.clientY - window.y
+
     //console.log("::", event.type)
-    if (event.type == "mouseup") {
+    if (event.type == "mouseup" || event.type == "touchend") {
         // select
         if (event.clientX == downPos.x && event.clientY == downPos.y) {
             if (windowBeingDragged.ptr != null) {
@@ -39,7 +41,7 @@ function handleEvents(window, event) {
         windowBeingDragged.ptr = null
     }
 
-    else if (event.type == "mousedown") {
+    else if (event.type == "mousedown" || event.type == "touchstart") {
         //console.log("OLD", lastClick)
         // if(lastClick != null)
         // {
@@ -71,12 +73,12 @@ function handleEvents(window, event) {
 }
 
 function scanWindows(e) {
-    //console.log(e.target.tagName)
     var noHit = true
     for(var i = activeWindows.length - 1; i >= 0; i--)
     {
         var window = activeWindows[i]
         if (e.clientX > window.x && e.clientY > window.y && e.clientX < (window.x + window.w) && e.clientY < (window.y + window.h)) {
+            console.log(e.type)
             window.owner(window, e)
             renderAll()
             noHit = false
@@ -84,10 +86,10 @@ function scanWindows(e) {
         }
     }
 
-    if (e.type == "mouseup") {
+    if (e.type == "mouseup" || e.type == "touchend") {
         windowBeingDragged.ptr = null
     }
-    else if (e.type == "mousemove") {
+    else if (e.type == "mousemove" || e.type == "touchmove") {
         if (windowBeingDragged.ptr != null) {
             windowBeingDragged.ptr.x = e.clientX - windowBeingDragged.sx
             windowBeingDragged.ptr.y = e.clientY - windowBeingDragged.sy
@@ -105,13 +107,18 @@ function randMax(max) {
 }
 
 function scanWindowsAndIcons(e) {
+    //console.log(e)
 
     var noHit = scanWindows(e)
     if (noHit)
         allIcons.every(icon => {
             if (e.clientX > icon.x && e.clientY > icon.y && e.clientX < (icon.x + icon.size) && e.clientY < (icon.y + icon.size)) {
                 //console.log("launch")
-                newWindow(icon.title, randMax(window.innerWidth / 2.5) + 120, randMax(window.innerHeight/4) + 20, 600, 400, icon.text, icon.owner, icon.ox, icon.oy)
+
+                var xpos = useRandomSpawn ? randMax(window.innerWidth / 2.5) + 120 : 0
+                var ypos = useRandomSpawn ? randMax(window.innerHeight/4) + 20     : 0
+
+                newWindow(icon.title, xpos, ypos, ICON_WIDTH, ICON_HEIGHT, icon.text, icon.owner, icon.ox, icon.oy)
                 renderAll()
                 return false
             }
@@ -125,7 +132,7 @@ canvas.addEventListener("mousedown", scanWindows)
 canvas.addEventListener("mouseup", scanWindows)
 canvas.addEventListener("click", scanWindowsAndIcons)
 
-window.addEventListener('touchmove', scanWindowsAndIcons);
+window.addEventListener('touchmove', scanWindows);
 canvas.addEventListener('touchend', scanWindows);
 canvas.addEventListener('touchstart', scanWindows);
 

@@ -99,10 +99,10 @@ Stuff here
 </pre>`,
     dino:
         `<pre style="overflow: hidden">
-<iframe src="https://chromedino.com/" frameborder="0" scrolling="no" width="580px" height="400px" loading="lazy"></iframe>
+<iframe src="https://chromedino.com/" frameborder="0" scrolling="no" width="${ICON_WIDTH - 20}px" height="${ICON_HEIGHT}px" loading="lazy"></iframe>
 </pre>`,
     browser:
-        `<pre style="overflow: hidden"><iframe width="580px" height="400px" src="https://www.google.com/search?igu=1"></iframe></pre>`,
+        `<pre style="overflow: hidden"><iframe width="${ICON_WIDTH - 20}px" height="${ICON_HEIGHT}px" src="https://www.google.com/search?igu=1"></iframe></pre>`,
     terminal:
         `<pre style="overflow: hidden">
 <textarea id="jsterminal" onkeyup="term.getInput()" onkeydown="term.setCursor()" style="resize:none;width:600px;height:350px;font-size:20px">=================== JS TERMINAL ===================
@@ -224,8 +224,16 @@ function kernel() {
     newApp("JS TERMINAL", "icon_terminal", texts.terminal, 10, 20, handleEvents, true)
     newApp("MAKE AN APP", "icon_vector", texts.makeApp, 10, 20, handleEvents, true)
 
-
-
     setInterval(renderTime, 1000)
+
+    if (!useRandomSpawn) {
+        setTimeout(() => {
+            newWindow("MOBILE NOTICE", 0, 0, ICON_WIDTH, ICON_HEIGHT, `<pre></pre>`, handleEvents, 0, 0)
+            renderAll()
+        }, 300);
+    }
+
     renderAll()
+
+    //renderWindows()
 }
