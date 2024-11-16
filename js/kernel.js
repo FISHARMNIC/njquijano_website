@@ -124,24 +124,6 @@ function customApp() {
     renderIcons()
 }
 
-// function clone taken from https://stackoverflow.com/questions/1833588/javascript-clone-a-function
-Function.prototype.clone = function () {
-    const cloneTarget = Symbol.for("cloneTarget");
-    const targetFn = this[cloneTarget] ?? this;
-
-    function clone() {
-        return targetFn.apply(this, arguments);
-    };
-
-    for (const key in targetFn) {
-        clone[key] = this[key];
-    }
-
-    clone[cloneTarget] = targetFn;
-
-    return clone;
-};
-
 var term =
 {
     buffer: "",
@@ -164,7 +146,7 @@ var term =
         if (key == "Enter") {
             var output;
 
-            var actual_console_log = console.log.clone()
+            var actual_console_log = console.log
 
             if (this.buffer.trim().length == 0) {
                 output = "Type any valid JS code"

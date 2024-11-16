@@ -24,7 +24,7 @@ function findWindowByRef(window) {
 }
 
 function handleEvents(window, event) {
-    console.log(event.type)
+    //console.log(event.type)
     var locX = event.clientX - window.x
     var locY = event.clientY - window.y
 

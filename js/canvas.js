@@ -1,5 +1,6 @@
 // TODO: on drag make that window last in arr so it draws it last on top
 
+// FIX: make an app name is broken and inner 
 /*
 How to fix issue, take "ss" of portion and paste it
 
