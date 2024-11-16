@@ -105,7 +105,7 @@ Stuff here
         `<pre style="overflow: hidden"><iframe width="580px" height="400px" src="https://www.google.com/search?igu=1"></iframe></pre>`,
     terminal:
         `<pre style="overflow: hidden">
-<textarea id="jsterminal" onkeyup="term.getInput()" onkeydown="term.setCursor()" style="resize:none;width:580px;height:400px;font-size:20px">=================== JS TERMINAL ===================
+<textarea id="jsterminal" onkeyup="term.getInput()" onkeydown="term.setCursor()" style="resize:none;width:600px;height:350px;font-size:20px">=================== JS TERMINAL ===================
 Things to try:
 * console.log("hi")
 * alert("hello")
@@ -125,16 +125,16 @@ function customApp() {
 }
 
 // function clone taken from https://stackoverflow.com/questions/1833588/javascript-clone-a-function
-Function.prototype.clone = function() {
+Function.prototype.clone = function () {
     const cloneTarget = Symbol.for("cloneTarget");
     const targetFn = this[cloneTarget] ?? this;
 
     function clone() {
-      return targetFn.apply(this, arguments);
+        return targetFn.apply(this, arguments);
     };
 
     for (const key in targetFn) {
-      clone[key] = this[key];
+        clone[key] = this[key];
     }
 
     clone[cloneTarget] = targetFn;
@@ -149,7 +149,7 @@ var term =
     getID: function () {
         var got = document.getElementById("jsterminal")
         this.ilen = got.value.length
-        console.log(got.value.length, this.ilen)
+        //console.log(got.value.length, this.ilen)
         return got
     },
     setCursor: function () {
@@ -166,27 +166,27 @@ var term =
 
             var actual_console_log = console.log.clone()
 
-            if(this.buffer.trim().length == 0)
-            {
+            if (this.buffer.trim().length == 0) {
                 output = "Type any valid JS code"
             }
-            else
-            {
-            var evString = (`
+            else {
+                var evString = (`
             console.log = function() {
                 document.getElementById("jsterminal").value += [...arguments].join(" ") + "\\n"
              }
             ` + this.buffer)
 
-            try {
-                output = eval(evString)
-            }
-            catch (error) {
-                output = error
-            }
+                try {
+                    output = eval(evString)
+                }
+                catch (error) {
+                    output = error
+                }
 
-            console.log = actual_console_log
-        }
+                console.log = actual_console_log
+
+                //console.log(evString)
+            }
 
             inner.value += "--> " + output + "\n:> "
             this.buffer = ""
@@ -203,19 +203,9 @@ var term =
         else if (key.length == 1) {
             this.buffer += key
         }
+
+        this.setCursor()
     }
-
-}
-
-function term_setStart() {
-    var inner = document.getElementById("jsterminal")
-    var ilen = inner.value.length
-
-    inner.setSelectionRange(ilen, ilen)
-
-}
-
-function term_read() {
 
 }
 
@@ -228,10 +218,11 @@ function kernel() {
     newApp("MY LINKS", "icon_bull", texts.links, 10, 20, handleEvents)
     newApp("PROJECTS", "icon_droor", texts.projects, 10, 20, handleEvents)
     newApp("CONTACT", "icon_mail", texts.contact, 10, 20, handleEvents)
-    newApp("CUSTOM APP!", "icon_vector", texts.makeApp, 10, 20, handleEvents, true)
+
     newApp("CHROME DINO", "icon_dog", texts.dino, 10, 20, handleEvents, true)
     newApp("BROWSER", "icon_links", texts.browser, 10, 20, handleEvents, true)
-    newApp("JS TERMINAL", "icon_links", texts.terminal, 10, 20, handleEvents, true)
+    newApp("JS TERMINAL", "icon_terminal", texts.terminal, 10, 20, handleEvents, true)
+    newApp("MAKE AN APP", "icon_vector", texts.makeApp, 10, 20, handleEvents, true)
 
 
 

@@ -124,4 +124,10 @@ window.addEventListener("mousemove", scanWindows)
 canvas.addEventListener("mousedown", scanWindows)
 canvas.addEventListener("mouseup", scanWindows)
 canvas.addEventListener("click", scanWindowsAndIcons)
+
+window.addEventListener('touchmove', scanWindowsAndIcons);
+canvas.addEventListener('touchend', scanWindows);
+canvas.addEventListener('touchstart', scanWindows);
+
+
 //document.addEventListener("wheel", scanWindows)
