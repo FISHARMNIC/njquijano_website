@@ -1,8 +1,11 @@
 var canvas = document.getElementById("website")
 var ctx = canvas.getContext("2d")
 
-const canvasCenterX = window.innerWidth / 2
-const canvasCenterY = window.innerHeight / 2
+var INNERWIDTH =  window.innerWidth //* 1.7
+var INNERHEIGHT = window.innerHeight// * 1.7
+
+const canvasCenterX = INNERWIDTH / 2
+const canvasCenterY = INNERHEIGHT / 2
 
 // function mobileCheck from https://stackoverflow.com/questions/11381673/detecting-a-mobile-browser
 function onMobile() {
@@ -60,8 +63,8 @@ var startup = {
             this.strings = ["n i c o l a s\nq u i j a n o"]
         }
 
-        canvas.width = window.innerWidth
-        canvas.height = window.innerHeight
+        canvas.width = INNERWIDTH
+        canvas.height = INNERHEIGHT
 
 
         var DOSfont = new FontFace('DOS', 'url(../assets/MorePerfectDOSVGA.ttf)');
@@ -75,13 +78,13 @@ var startup = {
         setTimeout(() => {
             startup.textReference.hidden = true
 
-            var scale = window.innerWidth / window.innerHeight
+            var scale = INNERWIDTH / INNERHEIGHT
             canvas.hidden = false
 
             ctx.fillStyle = COLOR_BG
 
             //ENABLE IN TESTINGs
-            ctx.fillRect(0, 0, window.innerWidth, window.innerHeight)
+            ctx.fillRect(0, 0, INNERWIDTH, INNERHEIGHT)
             kernel()
 
             //DISABLE IN TESTING
@@ -89,7 +92,7 @@ var startup = {
             // var interval = setInterval(() => {
             //     ctx.fillRect(canvasCenterX - (i/2), canvasCenterY - ((i / scale)/2), i, i / scale)
             //     i += 10
-            //     if(i > window.innerWidth - 5)
+            //     if(i > INNERWIDTH - 5)
             //     {
             //         clearInterval(interval)
             //         kernel()

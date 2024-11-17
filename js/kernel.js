@@ -208,7 +208,7 @@ function kernel() {
     newApp("JS TERMINAL", "icon_terminal", texts.terminal, 10, 20, handleEvents, true)
     newApp("MAKE AN APP", "icon_vector", texts.makeApp, 10, 20, handleEvents, true)
 
-    setInterval(renderTime, 1000)
+    //setInterval(renderTime, 1000)
 
         setTimeout(() => {
             if (!useRandomSpawn) {
@@ -221,8 +221,9 @@ Click X Above to close this message</pre>`, handleEvents, 0, 0)
             }
             else
             {
-                newWindow("WELCOME!", window.innerWidth / 2 - ICON_WIDTH / 2, window.innerHeight / 2 - ICON_HEIGHT / 2, ICON_WIDTH, ICON_HEIGHT, `<pre>
+                newWindow("WELCOME!", INNERWIDTH / 2 - ICON_WIDTH / 2, INNERHEIGHT / 2 - ICON_HEIGHT / 2, ICON_WIDTH, ICON_HEIGHT, `<pre>
 Welcome to my website!
+* I recommend zooming out (Cmd/Ctrl,-) then reloading
 * Explore the different apps by clicking on them
 * Move windows by clicking and dragging the top bar
 * Close windows with the "X" in the upper right corner

@@ -111,14 +111,14 @@ function renderIcons() {
 }
 
 function renderTime() {
-    var date = new Date()
-    document.getElementById("time").innerHTML = date.toLocaleTimeString()
+    //var date = new Date()
+    //document.getElementById("time").innerHTML = date.toLocaleTimeString()
 }
 
 function renderAll() {
     ctx.save()
     ctx.fillStyle = COLOR_BG
-    ctx.fillRect(0, 0, window.innerWidth, window.innerHeight)
+    ctx.fillRect(0, 0, INNERWIDTH, INNERHEIGHT)
     renderIcons()
     renderWindows()
     ctx.restore()
