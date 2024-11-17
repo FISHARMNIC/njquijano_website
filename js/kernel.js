@@ -99,13 +99,13 @@ Stuff here
 </pre>`,
     dino:
         `<pre style="overflow: hidden">
-<iframe src="https://chromedino.com/" frameborder="0" scrolling="no" width="${ICON_WIDTH - 20}px" height="${ICON_HEIGHT}px" loading="lazy"></iframe>
+<iframe sandbox="allow-scripts" src="https://chromedino.com/" frameborder="0" scrolling="no" width="${ICON_WIDTH - 20}px" height="${ICON_HEIGHT}px" loading="lazy"></iframe>
 </pre>`,
     browser:
         `<pre style="overflow: hidden"><iframe width="${ICON_WIDTH - 20}px" height="${ICON_HEIGHT}px" src="https://www.google.com/search?igu=1"></iframe></pre>`,
     terminal:
         `<pre style="overflow: hidden">
-<textarea id="jsterminal" onkeyup="term.getInput()" onkeydown="term.setCursor()" style="resize:none;width:600px;height:350px;font-size:20px">=================== JS TERMINAL ===================
+<textarea id="jsterminal" onkeyup="term.getInput()" onkeydown="term.setCursor()" style="resize:none;width:${ICON_WIDTH}px;height:${ICON_HEIGHT-50}px;font-size:20px">=================== JS TERMINAL ===================
 Things to try:
 * console.log("hi")
 * alert("hello")
@@ -144,6 +144,8 @@ var term =
         var key = window.event.key
 
         if (key == "Enter") {
+            this.buffer = inner.value.split("\n").at(-2).substring(3)
+
             var output;
 
             var actual_console_log = console.log
@@ -173,18 +175,18 @@ var term =
             inner.value += "--> " + output + "\n:> "
             this.buffer = ""
         }
-        else if (key == "Backspace") {
-            if (this.buffer.length > 0) {
-                this.buffer = this.buffer.substring(0, this.buffer.length - 1)
-                inner.value = inner.value.substring(0, this.ilen)
-            }
-            else {
-                inner.value += " "
-            }
-        }
-        else if (key.length == 1) {
-            this.buffer += key
-        }
+        // else if (key == "Backspace") {
+        //     if (this.buffer.length > 0) {
+        //         this.buffer = this.buffer.substring(0, this.buffer.length - 1)
+        //         inner.value = inner.value.substring(0, this.ilen)
+        //     }
+        //     else {
+        //         inner.value += " "
+        //     }
+        // }
+        // else if (key.length == 1) {
+        //     this.buffer += key
+        // }
 
         this.setCursor()
     }
@@ -208,18 +210,29 @@ function kernel() {
 
     setInterval(renderTime, 1000)
 
-    if (!useRandomSpawn) {
         setTimeout(() => {
-            newWindow("MOBILE NOTICE", 0, 0, ICON_WIDTH, ICON_HEIGHT, `<pre style="white-space: pre-wrap;width:80%;padding-left:5%;">
+            if (!useRandomSpawn) {
+                newWindow("MOBILE NOTICE", 0, 0, ICON_WIDTH, ICON_HEIGHT, `<pre style="white-space: pre-wrap;width:80%;padding-left:5%;">
 \n\nPlease note that this website was not designed for mobile 
-
+                    
 Some apps might not show up correctly depending on your system 
+                    
+Click X Above to close this message</pre>`, handleEvents, 0, 0)
+            }
+            else
+            {
+                newWindow("WELCOME!", window.innerWidth / 2 - ICON_WIDTH / 2, window.innerHeight / 2 - ICON_HEIGHT / 2, ICON_WIDTH, ICON_HEIGHT, `<pre>
+Welcome to my website!
+* Explore the different apps by clicking on them
+* Move windows by clicking and dragging the top bar
+* Close windows with the "X" in the upper right corner
+* Change font size by clicking "+" or "-"
 
-Click X Above to close this message
-                </pre>`, handleEvents, 0, 0)
+Nicolas Quijano 2024
+`, handleEvents, 10, 20)
+            }
             renderAll()
         }, 500);
-    }
 
     renderAll()
 

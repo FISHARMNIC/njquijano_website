@@ -11,8 +11,8 @@ function onMobile() {
     return check;
 };
 
-window.ICON_WIDTH = 600
-window.ICON_HEIGHT = 400
+window.ICON_WIDTH = 800
+window.ICON_HEIGHT = 500
 window.useRandomSpawn = true
 
 var startup = {

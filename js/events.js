@@ -78,7 +78,7 @@ function scanWindows(e) {
     {
         var window = activeWindows[i]
         if (e.clientX > window.x && e.clientY > window.y && e.clientX < (window.x + window.w) && e.clientY < (window.y + window.h)) {
-            console.log(e.type)
+            //console.log(e.type)
             window.owner(window, e)
             renderAll()
             noHit = false

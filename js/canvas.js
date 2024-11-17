@@ -11,7 +11,7 @@ const COLOR_BG = "#F9E8BA"
 const COLOR_BORDER = "#341E1C"
 const IMG_SIZE = 65
 
-const FONT_SIZE_DEF = 20
+const FONT_SIZE_DEF = 24
 var currentFontSize = FONT_SIZE_DEF
 
 function renderImage(image, x, y, w, h) {
@@ -42,6 +42,9 @@ function rectWithBorder(x, y, w, h) {
 }
 
 function renderWindow(window) {
+    window.w = ICON_WIDTH
+    window.h = ICON_HEIGHT
+
     rectWithBorder(window.x, window.y, window.w, window.h)
     putText(window.title, window.x + 14, window.y + 26, { a: "left", f: "20px DOS", c: "black" })
     putText("X", window.x + window.w - 20, window.y + 26, { a: "left", f: "20px DOS", c: "black" })
@@ -55,8 +58,11 @@ function renderWindow(window) {
 
     var text = document.getElementById(`_APP_${window.id}_`)
 
-    
+
     if (activeWindows[activeWindows.length - 1] == window) {
+
+        text.style.width = window.w
+        text.style.height = window.h
 
         text.style.left = window.x + window.ox + "px"
         text.style.top = window.y + window.oy - (currentFontSize - 15) + "px"
@@ -67,8 +73,8 @@ function renderWindow(window) {
 
         if (!useRandomSpawn) {
             pre = text.children[0]
-            pre.style.width = (ICON_WIDTH - 25) + "px"
-            pre.style.height =  ICON_HEIGHT + "px"
+            // pre.style.width = (window.w - 25) + "px"
+            // pre.style.height =  window.h + "px"
         }
         
     } else {
@@ -110,10 +116,12 @@ function renderTime() {
 }
 
 function renderAll() {
+    ctx.save()
     ctx.fillStyle = COLOR_BG
     ctx.fillRect(0, 0, window.innerWidth, window.innerHeight)
     renderIcons()
     renderWindows()
+    ctx.restore()
 }
 
 function setText(window, offX, offY, text) {
@@ -124,9 +132,11 @@ function setText(window, offX, offY, text) {
 }
 
 function cfont(s) {
-
+    s = parseInt(s)
     if ((s < 0 && currentFontSize > 14) || (s > 0 && currentFontSize < 25)) {
-        currentFontSize += parseInt(s)
+        currentFontSize += s
+        //ICON_WIDTH += s * 20
+        //ICON_HEIGHT += s * 20
         renderAll()
     }
 }
