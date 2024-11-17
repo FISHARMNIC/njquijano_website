@@ -55,11 +55,14 @@ function renderWindow(window) {
 
     var text = document.getElementById(`_APP_${window.id}_`)
 
-    text.style.left = window.x + window.ox + "px"
-    text.style.top = window.y + window.oy - (currentFontSize - 15) + "px"
-    text.style.fontSize = (currentFontSize) + "px"
-
+    
     if (activeWindows[activeWindows.length - 1] == window) {
+
+        text.style.left = window.x + window.ox + "px"
+        text.style.top = window.y + window.oy - (currentFontSize - 15) + "px"
+        text.style.fontSize = (currentFontSize) + "px"
+
+        
         text.hidden = false
 
         if (!useRandomSpawn) {

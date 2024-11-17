@@ -60,8 +60,8 @@ var startup = {
             this.strings = ["n i c o l a s\nq u i j a n o"]
         }
 
-        canvas.width = window.screen.width
-        canvas.height = window.screen.height
+        canvas.width = window.innerWidth
+        canvas.height = window.innerHeight
 
 
         var DOSfont = new FontFace('DOS', 'url(../assets/MorePerfectDOSVGA.ttf)');
