@@ -223,13 +223,12 @@ Click X Above to close this message</pre>`, handleEvents, 0, 0)
             {
                 newWindow("WELCOME!", INNERWIDTH / 2 - ICON_WIDTH / 2, INNERHEIGHT / 2 - ICON_HEIGHT / 2, ICON_WIDTH, ICON_HEIGHT, `<pre>
 Welcome to my website!
-* I recommend zooming out (Cmd/Ctrl,-) then reloading
 * Explore the different apps by clicking on them
 * Move windows by clicking and dragging the top bar
 * Close windows with the "X" in the upper right corner
 * Change font size by clicking "+" or "-"
 
-Nicolas Quijano 2024
+Nicolas Quijano 2024</pre>
 `, handleEvents, 10, 20)
             }
             renderAll()
