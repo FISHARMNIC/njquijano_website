@@ -115,7 +115,7 @@ function scanWindowsAndIcons(e) {
             if (e.clientX > icon.x && e.clientY > icon.y && e.clientX < (icon.x + icon.size) && e.clientY < (icon.y + icon.size)) {
                 //console.log("launch")
 
-                var xpos = useRandomSpawn ? randMax(INNERWIDTH / 2.5) + 120 : 0
+                var xpos = useRandomSpawn ? randMax(INNERWIDTH / 2.5) : 0
                 var ypos = useRandomSpawn ? randMax(INNERHEIGHT/4) + 20     : 0
 
                 newWindow(icon.title, xpos, ypos, ICON_WIDTH, ICON_HEIGHT, icon.text, icon.owner, icon.ox, icon.oy)
