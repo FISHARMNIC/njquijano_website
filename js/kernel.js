@@ -70,6 +70,9 @@ Credit:
     * IO ports
     * Mulitple memory references per instruction
     * Segmented memory
+* <a href="intro.pdf">Light Sculpture</a>
+    * Designed and built in a single week
+    * Uses IR sensors and different LED strips to make it interactive
 </pre>`,
     contact:
         `<pre>
@@ -103,7 +106,7 @@ Stuff here
 <iframe sandbox="allow-scripts" src="https://chromedino.com/" frameborder="0" scrolling="no" width="${ICON_WIDTH - 20}px" height="${ICON_HEIGHT}px" loading="lazy"></iframe>
 </pre>`,
     browser:
-        `<pre style="overflow: hidden"><button class="intbttn" onclick="document.getElementById('app_browser_iframe').src='https://www.google.com/search?igu=1'" >home</button><br><iframe id="app_browser_iframe" width="${ICON_WIDTH - 20}px" height="${ICON_HEIGHT}px" src="https://www.google.com/search?igu=1"></iframe></pre>`,
+        `<pre style="overflow: hidden"><button class="intbttn" onclick="document.getElementById('app_browser_iframe').src='https://www.google.com/search?igu=1'" >home</button><br><iframe id="app_browser_iframe" width="${ICON_WIDTH - 40}px" height="${ICON_HEIGHT}px" src="https://www.google.com/search?igu=1"></iframe></pre>`,
     terminal:
         `<pre style="overflow: hidden">
 <textarea id="jsterminal" onkeyup="term.getInput()" onkeydown="term.setCursor()" style="resize:none;width:${ICON_WIDTH}px;height:${ICON_HEIGHT-50}px;font-size:20px">=================== JS TERMINAL ===================
