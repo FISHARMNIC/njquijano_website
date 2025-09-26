@@ -6,19 +6,16 @@ var texts = {
     about:
         `<pre>Hello, my name is Nicolás Quijano.
 
-* 18-year-old prospective ECE student at 
-  University of Colorado at Boulder
-* Passion for programming and electronics
-    * C, Assembly, Javascript
+I am a second-year Electrical and Computer Engineering
+at Univeristy of Colorado at Boulder.
+
+I have a passion for programming and electronics, more specifically:
+    * C, Assembly, Javascript/Typescript
     * Arduino
     * Logic circuits and CPU design
-* Avid climber and skier!
 
 Check out some of the other apps. I built this 
-website from scratch in Javascript.
-
-                                             
-                                             
+website from scratch in Javascript.                               
                                              
                    -=---  -                  
                -**#%#%%##**+===              
@@ -48,6 +45,7 @@ website from scratch in Javascript.
 
 * <a href="https://github.com/FISHARMNIC">Github</a>
 * <a href="https://www.linkedin.com/in/nicolás-quijano-124657272/">Linkedin</a>
+* <a href="resume.pdf">Resume</a>
 
 Credit:
 * MacOS icons: <a href="https://www.figma.com/community/file/1258417138275801052">Agustin Cairone</a>
@@ -55,6 +53,9 @@ Credit:
 </pre>`,
     projects:
         `<pre>Here are some things that I have made / am making
+* <a href="https://github.com/FISHARMNIC/Construct">Construct: a WIP static Javascript Compiler</a>
+    * Produces readable C++
+    * Optimized dynamic type system
 * <a href="https://github.com/FISHARMNIC/HAMprimeC2">HAM' 32-bit Compiled Programming Language</a>
     * Like a mix of C++, Java, and Python/JS
     * Automatic garbage collection system
