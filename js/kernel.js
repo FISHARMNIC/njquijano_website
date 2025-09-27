@@ -246,7 +246,7 @@ Welcome to my website!
 * Close windows with the "X" in the upper right corner
 * Change font size by clicking "+" or "-"
 
-Nicolas Quijano 2024</pre>
+Nicolas Quijano 2025</pre>
 `, handleEvents, 10, 20)
             }
             renderAll()
