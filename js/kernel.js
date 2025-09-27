@@ -48,6 +48,7 @@ website from scratch in Javascript.
 * <a href="resume.pdf">Resume</a>
 
 Credit:
+
 * MacOS icons: <a href="https://www.figma.com/community/file/1258417138275801052">Agustin Cairone</a>
 
 </pre>`,
@@ -73,6 +74,19 @@ Credit:
 * <a href="intro.pdf">Light Sculpture</a>
     * Designed and built in a single week
     * Uses IR sensors and different LED strips to make it interactive
+    * I focused on:
+        * Programming the Arduino
+        * Designing the 3D model of the Flatirons
+    * All parts we custom made
+        * The box was made with a table saw
+        * The trees were laser-cut
+        * The Flatirons were 3D printed
+    * Photos and videos:
+        * <a href="initial_sketch.png">Initial sketch</a>
+        * <a href="wiring.png">Constructed circuit</a>
+        * <a href="video.mov">Video of it in action</a>
+
+
 </pre>`,
     contact:
         `<pre>
