@@ -71,39 +71,6 @@ Credit:
     * IO ports
     * Mulitple memory references per instruction
     * Segmented memory
-* <a href="intro.pdf">Light Sculpture</a>
-    * Designed and built in a single week
-    * Uses IR sensors and different LED strips to make it interactive
-    * I focused on:
-        * Programming the Arduino
-        * Designing the 3D model of the Flatirons
-    * All parts we custom made
-        * The box was made with a table saw
-        * The trees were laser-cut
-        * The Flatirons were 3D printed
-    * Photos and videos:
-        * <a href="initial_sketch.png">Initial sketch</a>
-        * <a href="wiring.png">Constructed circuit</a>
-        * <a href="video.mov">Video of it in action</a>
-* <a href="group.png">Carnival Fun! - Interactive Ball Toss</a>
-    * Final project of GEEN1400, Freshman design projects
-        * Carnival game designed for disabled students 
-        * Our client was the ILC deparment at Lafayette Elementary
-    * Playing the game
-        * Controlled at the push of a large single button, which can be moved around
-        * Consists of a tosser and board, 
-        * Players can launch balls into the board at the push of a button
-        * Pushing the button releases an electronic latch that launches a resting ball
-    * My work
-        * Encharge of designing the mechanical part of the tosser
-        * Used OnShape to CAD the entire piece (shown below)
-        * CAD consists of several large components that slot together
-        * All parts were printed in high resolution with sturdy infil
-    * Photos and videos:
-        * <a href="CAD.png">CAD of tosser</a>
-        * <a href="finalTosser.png">3D printed tosser</a>
-        * <a href="testing.png">Our group testing the product</a>
-        * <a href="board.png">Image of the painted board, where the balls go into</a>
 </pre>`,
     contact:
         `<pre>
